@@ -1,12 +1,19 @@
 public class InventoryItem {
 
-    private final Item item;
+    protected final Item item;
 
     public InventoryItem(Item item) {
         this.item = item;
     }
 
     public static InventoryItem create(Item item) {
+        if (item.name.equals(AgedBrie.NAME)) {
+            return new AgedBrie(item);
+        } else if (item.name.equals(BackStage.NAME)) {
+            return new BackStage(item);
+        } else if (item.name.equals(Sulfuras.NAME)) {
+            return new Sulfuras(item);
+        }
         return new InventoryItem(item);
     }
 
@@ -21,28 +28,10 @@ public class InventoryItem {
     }
 
     protected void updateQuality() {
-        if (item.name.equals("Aged Brie")) {
-            increaseQuality();
-        } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            increaseQuality();
-            if (item.sellIn < 11) {
-                increaseQuality();
-            }
-
-            if (item.sellIn < 6) {
-                increaseQuality();
-            }
-        } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            return;
-        } else {
-            decreaseQuality();
-        }
+        decreaseQuality();
     }
 
     protected void updateExpiration() {
-        if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            return;
-        }
         item.sellIn--;
     }
 
@@ -51,15 +40,7 @@ public class InventoryItem {
     }
 
     protected void processExpired() {
-        if (item.name.equals("Aged Brie")) {
-            increaseQuality();
-        } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            item.quality = 0;
-        } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            return;
-        } else {
-            decreaseQuality();
-        }
+        decreaseQuality();
     }
 
     protected void increaseQuality() {
