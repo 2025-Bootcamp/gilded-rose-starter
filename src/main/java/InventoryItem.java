@@ -13,7 +13,10 @@ public class InventoryItem {
             return new BackStage(item);
         } else if (item.name.equals(Sulfuras.NAME)) {
             return new Sulfuras(item);
+        } else if (item.name.equals(Conjured.NAME)) {
+            return new Conjured(item);
         }
+
         return new InventoryItem(item);
     }
 
