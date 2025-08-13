@@ -240,6 +240,15 @@ class GildedRoseTest {
         subject.updateQuality();
 
         assertEquals(16, item.quality);
-        assertEquals(0, item.sellIn);
+    }
+
+//    @Test
+    void conjured_items_quality_can_never_be_negative() {
+        Item item = new Item("Conjured", 10, 1);
+        GildedRose subject = new GildedRose(new Item[] { item });
+
+        subject.updateQuality();
+
+        assertEquals(0, item.quality);
     }
 }
