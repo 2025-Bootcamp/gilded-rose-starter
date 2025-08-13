@@ -11,7 +11,7 @@ class GildedRoseTest {
         final Item standardItem = new Item("Elixir of the Mongoose", startingSellin, startingQuality);
         GildedRose subject = new GildedRose(new Item[] {standardItem});
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(startingSellin - 1, standardItem.sellIn);
         assertEquals(startingQuality - 1, standardItem.quality);
@@ -23,7 +23,7 @@ class GildedRoseTest {
         Item secondItem = new Item("Second Standard Item", 3, 2);
         GildedRose subject = new GildedRose(new Item[] { firstItem, secondItem });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(4, firstItem.sellIn);
         assertEquals(3, firstItem.quality);
@@ -36,7 +36,7 @@ class GildedRoseTest {
         Item item = new Item("Standard Item", -1, 4);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(2, item.quality);
     }
@@ -46,7 +46,7 @@ class GildedRoseTest {
         Item item = new Item("Standard Item", 1, 4);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(3, item.quality);
     }
@@ -56,7 +56,7 @@ class GildedRoseTest {
         Item item = new Item("Standard Item", 4, 1);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(0, item.quality);
     }
@@ -66,7 +66,7 @@ class GildedRoseTest {
         Item item = new Item("First Standard Item", 4, 0);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(0, item.quality);
     }
@@ -76,7 +76,7 @@ class GildedRoseTest {
         Item item = new Item("Aged Brie", 5, 6);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(7, item.quality);
     }
@@ -86,7 +86,7 @@ class GildedRoseTest {
         Item item = new Item("Aged Brie", 5, 49);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -96,7 +96,7 @@ class GildedRoseTest {
         Item item = new Item("Aged Brie", 5, 50);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -106,7 +106,7 @@ class GildedRoseTest {
         Item item = new Item("Aged Brie", 0, 6);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(8, item.quality);
     }
@@ -116,7 +116,7 @@ class GildedRoseTest {
         Item item = new Item("Aged Brie", 0, 50);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -126,7 +126,7 @@ class GildedRoseTest {
         Item item = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(80, item.quality);
     }
@@ -136,7 +136,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(21, item.quality);
     }
@@ -146,7 +146,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 48);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(49, item.quality);
     }
@@ -156,7 +156,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(22, item.quality);
     }
@@ -166,7 +166,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -176,7 +176,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 46);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(48, item.quality);
     }
@@ -186,7 +186,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(23, item.quality);
     }
@@ -196,7 +196,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 47);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -206,7 +206,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(50, item.quality);
     }
@@ -216,7 +216,7 @@ class GildedRoseTest {
         Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20);
         GildedRose subject = new GildedRose(new Item[] { item });
 
-        subject.updateQuality();
+        subject.updateInventory();
 
         assertEquals(0, item.quality);
     }
