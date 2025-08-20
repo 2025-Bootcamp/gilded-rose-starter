@@ -33,9 +33,6 @@ goblin in the corner who will insta-rage and one-shot you as he doesn't believe 
 ownership (you can make the UpdateQuality method and Items property static if you like, we'll cover
 for you).
 
-Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a
-legendary item and as such its Quality is 80 and it never alters.
-
 ## 中文
 # 镶金玫瑰商店
 
@@ -58,6 +55,3 @@ legendary item and as such its Quality is 80 and it never alters.
 我们最近还签了一个供应商，给我们供应魔法召唤物品。这又需要升级我们的系统：
 
 * 魔法（Conjured）商品，比如魔法蛋糕（Conjured Mana Cake）,贬值速度是普通物品的两倍。
-
-最后需要说明的是，任何商品的质量值都不能超过 50，但 “Sulfuras” 作为传说物品，其质量固定为 80，并且永远不会变化。
-现在，请开始你的表演~
